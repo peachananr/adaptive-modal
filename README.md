@@ -6,7 +6,7 @@ Created by [Pete R.](http://www.thepetedesign.com), Founder of [Travelistly](htt
 
 License: [Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/deed.en_US)
 
-[![Adaptive Modal](http://www.thepetedesign.com/images/adaptive-modal_image.png "Adaptive Modal")](http://www.thepetedesign.com/demos/adaptive-modal.html)
+[![Adaptive Modal](http://www.thepetedesign.com/images/adaptive-modal_image.png "Adaptive Modal")](http://www.thepetedesign.com/demos/adaptive-modal_demo.html)
 
 
 ## Demo
