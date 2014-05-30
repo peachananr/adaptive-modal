@@ -88,9 +88,9 @@ You can initiate the function with javascript instead of an HTML markup in case 
 
 ````javascript
  $(".am-remote-link").adaptiveModal({
-   elementAnimateTime: 100,                   // Define the animation time for each element to animate when the modal is openned/closed. The option accept milliseconds. The default value is 100.
-   customBgColor: "#333",                     // In case the link have no background color to derive from you can set the background color of the modal here. The option accept HEX, RGB, and RGBA The default value is "#333333".
-   remoteUrl: false,                          //  You can define the remote URL here as well as the markup. The option accept generic URL. The default value is false.
+   elementAnimateTime: 100,                   // Define the animation time for each element to animate when the modal is openned/closed. The option accepts milliseconds. The default value is 100.
+   customBgColor: "#333",                     // In case the link have no background color to derive from you can set the background color of the modal here. The option accepts HEX, RGB, and RGBA The default value is "#333333".
+   remoteUrl: false,                          //  You can define the remote URL here as well as the markup. The option accepts generic URL. The default value is false.
    elementAnimateIn: "scaleShow",             // Require Animate.css extension: You can define the element inside the modal its own entrance animation by putting the Animate.css class name here. The default value is the built-in scaleShow animation.
    elementAnimateOut: "scaleHide",            // Require Animate.css extension: You can define the element inside the modal its own exit animation by putting the Animate.css class name here. The default value is the built-in scaleHide animation.
    beforeAnimate: function(el, status) {},    // Callback function execute before the animation begins. Parameters available are el, and status which returns the jQuery object and the status of the animation, ie "open" will return when the animation is opening the modal, and vice versa, respectively. 
@@ -137,7 +137,7 @@ This callback function will be called right after the animation stops. Parameter
 ````
 
 ## Public Methods
-You can call these methods to programtically interact with the plugin:
+You can call these methods to programmatically interact with the plugin:
 
 ### $.fn.openModal()
 
@@ -149,7 +149,7 @@ You can open the modal prgrapmatically by calling this function as shown below:
 
 ### $.fn.closeModal()
 
-You can close the modal prgrapmatically by calling this function as shown below:
+You can close the modal programmatically by calling this function as shown below:
 
 ````javascript
   $(".am-remote-link").closeModal()
