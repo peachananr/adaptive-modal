@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Adaptive Modal by Pete R. | The Pete Design</title>
+	<meta name="title" content="jQuery Adaptive Modal by Pete R. | The Pete Design" />
+	<meta name="description" content="Create modal windows that can be morphed from anything with jQuery Adaptive Modal plugin by Pete Rojwongsuriya" />
+	<link rel="image_src" href="/images/adaptive-modal_image.png" />
+
+	<meta content="http://www.thepetedesign.com/demos/adaptive-modal.html" property="og:url" />
+	<meta content="http://www.thepetedesign.com/images/adaptive-modal_image.png" property="og:image" />
+	<link rel="shortcut icon" id="favicon" href="favicon.png"> 
+	<meta name="author" content="Pete R.">
+	<link rel="canonical" href="http://www.thepetedesign.com/demos/adaptive-modal_demo.html" />
+  <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="jquery.adaptive-modal.js"></script>
+  <link href='adaptive-modal.css' rel='stylesheet' type='text/css'>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      background: #fff;
+      padding: 0;
+      text-align: center;
+      font-family: 'Open Sans';
+      position: relative;
+      margin: 0;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizelegibility;
+    }
+    
+    a {
+      color: black;
+    }
+    
+    .header {
+      padding: 30px 0 0;
+      float: left;
+      width: 100%;
+      background: white;
+    }
+    
+    .wrapper {
+    	height: auto !important;
+    	height: 100%;
+    	margin: 0 auto; 
+    	overflow: hidden;
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    
+    h1, h2 {
+      width: 100%;
+      float: left;
+    }
+    h1 {
+      margin-top: 100px;
+      color: #999;
+      margin-bottom: 5px;
+      font-size: 70px;
+      font-weight: 100;
+    }
+    h2 {
+      padding: 00px 20px 30px 20px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      letter-spacing: 0px;
+      color: #888;
+      font-size: 20px;
+      line-height: 160%;
+      font-weight: 100;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+    
+    
+    .pointer {
+      color: #00B0FF;
+      font-family: 'Pacifico';
+      font-size: 24px;
+      margin-top: 15px;
+      position: absolute;
+      top: 130px;
+      right: -40px;
+    }
+    .pointer2 {
+      color: #00B0FF;
+      font-family: 'Pacifico';
+      font-size: 24px;
+      margin-top: 15px;
+      position: absolute;
+      top: 130px;
+      left: -40px;
+    }
+    pre {
+      margin: 80px auto;
+    }
+    pre code {
+      padding: 35px;
+      border-radius: 5px;
+      font-size: 15px;
+      background: rgba(0,0,0,0.1);
+      border: rgba(0,0,0,0.05) 5px solid;
+      max-width: 500px;
+    }
+
+
+    .main {
+      float: left;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    
+    .main h1 {
+      padding:20px 50px 10px;
+      float: left;
+      width: 100%;
+      font-size: 60px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      font-weight: 100;
+      margin: 0;
+      padding-top: 25px;
+      font-family: 'Open Sans';
+      letter-spacing: -1px;
+      text-transform: capitalize;
+    }
+   
+    .main h1.demo1 {
+      background: #1ABC9C;
+    }
+    
+    .reload.bell {
+      font-size: 12px;
+      padding: 20px;
+      width: 45px;
+      text-align: center;
+      height: 47px;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+    }
+    
+    .reload.bell #notification {
+      font-size: 25px;
+      line-height: 140%;
+    }
+    .btn.btn-outline {
+      border: #333 2px solid;
+      background: none;
+      color: #333;
+    }
+    .btn.btn-outline:hover {
+      border: #333 2px solid;
+      background: #333;
+      color: #fff;
+    }
+    .reload, .btn{
+      display: inline-block;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      display: inline-block;
+      line-height: 100%;
+      padding: 0.7em;
+      text-decoration: none;
+      width: 100px;
+      line-height: 140%;
+      font-size: 17px;
+      font-family: Open Sans;
+      font-weight: bold;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background-color: #4D90FE;
+      background-image: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+      background-image: linear-gradient(top,#4d90fe,#4787ed);
+      border: 1px solid #3079ED;
+      color: #FFF;
+    }
+    .reload:hover{
+      background: #317af2;
+    }
+    .btn {
+      width: 200px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background-color: #4D90FE;
+      background-image: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+      background-image: linear-gradient(top,#4d90fe,#4787ed);
+      border: 1px solid #3079ED;
+      color: #FFF;
+    }
+    .clear {
+      width: auto;
+    }
+    .btn:hover, .btn:hover {
+      background: #317af2;
+    }
+    .btns {
+      margin: 50px auto;
+    }
+    .credit {
+      text-align: center;
+      color: #888;
+      padding: 10px 10px;
+      margin: 0 0 0 0;
+      float: left;
+      width: 100%;
+    }
+    .credit a {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+    
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      display: block;
+      padding: 7px;
+      width: 100%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      background:#f5f5f5;
+      font-weight: bold;
+      font-size: 13px;
+      color: #888;
+      -webkit-transition: all 200ms ease-out;
+      -moz-transition: all 200ms ease-out;
+      -o-transition: all 200ms ease-out;
+      transition: all 200ms ease-out;
+    }
+    .back:hover {
+      background: #eee;
+    }
+  
+    .container {
+      width: 980px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    .page-container {
+      float: left;
+      width: 100%;
+      margin: 0 auto 300px;
+      position: relative;
+    }
+    
+    .header {
+      overflow: hidden;
+      clear: both;
+    }
+    
+    .bg {
+      position: absolute;
+      min-height: 100% !important;
+      width: 100%;
+      z-index: 0;
+    }
+    
+    .ibg-bg {
+      position: absolute;
+    }
+    #btns {
+      text-align: center;
+      margin: 50px auto;
+      height: 50px;
+      overflow: hidden;
+      float: left;
+      width: 100%;
+    }
+    
+    
+    .main {
+      position: relative;
+    }
+    
+    .newmain {
+      margin-top: 35px;
+      color: #666;
+      font-size: 14px;
+    }
+    .newmain p a {
+      display: inline-block;
+      border-radius: 3px;
+      padding: 3px 5px;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .newmain p a.custom {
+      background: #5DC9E6;
+    }
+    
+    body .am-expanded.am-modal.modal1 {
+      width: 400px;
+      margin-left: -200px;
+    }
+
+    body .am-expanded.am-modal.modal1 .am-expanded.am-back {
+      width: 400px;
+      border-radius: 5px;
+    }
+    body .am-expanded.am-modal.modal3 {
+      width: 640px;
+      margin-left: -320px;
+    }
+    
+    body .am-expanded.am-modal.modal3 .am-modal-content {
+      padding: 15px;
+    }
+
+    body .am-expanded.am-modal.modal3 .am-expanded.am-back {
+      width: 640px;
+      padding: 0;
+      border-radius: 5px;
+    }
+    .newmain p a.am-remote-link {
+      background: #F8C864;
+      color: fff;
+    }
+    .am-modal-content {
+      color: white;
+      padding: 25px;
+      box-sizing: border-box;
+    }
+    .am-modal-content h1 {
+      font-size: 64px;
+      margin-top: 0;
+      font-family: 'Grand Hotel', cursive;
+      color: white;
+    }
+    
+    .am-modal-content form input{
+      background: rgba(255,255,255,0.25);
+      border: none;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 16px;
+      color: black;
+      border-radius: 3px;
+    }
+    .am-modal-content form .btns{
+      margin: 10px auto;
+    }
+    
+    .am-modal-content form a{
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 12px;
+      text-align: center;
+      color: white;
+      border: 2px solid white;
+      border-radius: 3px;
+      display: inline-block;
+      padding: 10px 15px;
+    }
+    
+    ::-webkit-input-placeholder {
+       color: rgba(255,255,255,0.7);
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: rgba(255,255,255,0.7);
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: rgba(255,255,255,0.7);
+    }
+
+    :-ms-input-placeholder {  
+       color: rgba(255,255,255,0.7);
+    }
+	</style>
+	<script>
+	  $(document).ready(function(){
+      $(".am-remote-link").adaptiveModal({
+        success: function(data) {
+          $.each( data.shots, function( i, item ) {
+            $( "<img/>" ).attr( "src", item.image_teaser_url ).prependTo( $(".am-remote") );
+            if ( i === 55 ) {
+              return false;
+            }
+          });
+        }
+      });
+		});
+		
+	</script>
+</head>
+<body>
+  <div class="wrapper">
+	  <div class="main">
+	    <div class="header">
+        <h1>jQuery Adaptive Modal</h1>
+        <h2>Create modal windows that can be morphed from anything with jQuery Adaptive Modal</h2>
+        <p class="credit">Created by <a href="http://www.thepetedesign.com">Pete R.</a>, Founder of <a href="http://www.travelistly.com" target="_blank">Travelistly</a> and <a href="http://www.bucketlistly.com" target="_blank">BucketListly</a></p>
+  	  </div>
+  	   
+    	<div class="container"> 
+    	  
+      	<div class="newmain">
+      	  <p>Lorem ipsum dolor sit amet, <a href="#form" style="background: #E8704E; color: white; font-weight: bold" data-toggle="adaptive-modal">Modal from Existing Container</a> consectetur adipisicing elit, sed do eiusmod tempor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo <a href="#" data-toggle="adaptive-modal" data-title="<h1>Hey Hey</h1><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>" data-am-custom-class="modal1" class="custom">Custom Styles</a> consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum <a class='am-remote-link' href="http://api.dribbble.com/players/jackietrananh/shots?callback=?" data-remote="true" data-datatype="json" data-am-custom-class="modal3">Open Remote Modal</a>.</p>
+          <div class="btns">
+            <a href="#" data-toggle="adaptive-modal" data-title="<h1>Hey Hey</h1><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>" class="btn btn-outline">Open Regular Modal</a>
+            <a class="reload btn" href="https://github.com/peachananr/shuffle-images">Download on Github</a>
+            <div id="form">
+              <h1>From another Container</h1>
+              <form>
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <div class="btns">
+                  <a href="#" class="am-trigger-close">Sign Up</a>
+                </div>
+              </form>
+            </div>
+          </div>
+      	</div>
+        
+      </div>
+    </div>
+    <a class="back" href="http://www.thepetedesign.com/#plugins">Back to The Pete Design</a>
+    <a href="https://github.com/peachananr/adaptive-modal"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  </div>
+  
+</body>
+</html>
